@@ -12,23 +12,23 @@ Sockets Links.
 4. Send and receive the message using the send function in socket.
 ## PROGRAM
 ## Client program
-import socket
-s=socket.socket()
-s.connect(('localhost',8000))
-while True:
-msg=input("Client > ")
-s.send(msg.encode())
-print("Server > ",s.recv(1024).decode())
+import socket   
+s=socket.socket()   
+s.connect(('localhost',8000))   
+while True:   
+msg=input("Client > ")  
+s.send(msg.encode())   
+print("Server > ",s.recv(1024).decode())   
 
  ## Server program
-import socket
-s=socket.socket()
-s.bind(('localhost',8000))
-s.listen(5)
-c,addr=s.accept()
-while True:
-ClientMessage=c.recv(1024).decode()
-c.send(ClientMessage.encode())
+import socket   
+s=socket.socket()   
+s.bind(('localhost',8000))  
+s.listen(5)  
+c,addr=s.accept()  
+while True:   
+ClientMessage=c.recv(1024).decode()   
+c.send(ClientMessage.encode())   
 ## OUPUT
 ## Client
 ![image](https://github.com/srinivasanvaiyali/3a.Sockets_Creation_for_Echo_Client_and_Echo_Server/assets/145117665/c90c8314-fabf-4683-80ec-13dc2a12b5c5)
